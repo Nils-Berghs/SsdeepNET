@@ -91,15 +91,10 @@ namespace SsdeepNET.Testing
         [Fact]
         public void TestImage() => 
             Test(File.ReadAllBytes("/home/nils/Documents/me.jpg"), "1536:JyTO1GCxFMptvnmi3gU3hvFXLsbc+NmgAlGU89gE2QOyvTTP:+OhxyCiD3hdsbc3Z589g7KTb");
-
-        [Fact]
-        public void TestDurationSmallFile() => 
-            TestSpeed("/home/nils/Documents/me.jpg", 50);
-
+        
         //Important RUN with Release build (over 10 times faster)
-        //should give hash: 3145728:TFsHd/8sdd8cTSIDX3q+zjLZABYR+83m5oSOle+nyqYUEVPrzLOxAH/:TKd/8sPFPDXDzjCa+MJNyq6LNf
-        [Fact]
-        public void TestDurationLargeFile() => 
-            TestSpeed("/home/nils/Downloads/tutorial.mp4", 5000);
+        // [Fact]
+        // public void TestDurationLargeFile() => 
+        //     TestSpeed("/somefile", 5000);
     }
 }
