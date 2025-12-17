@@ -43,6 +43,7 @@ namespace SsdeepNET.Testing
             var actualHash = hash.ComputeHash(fileStream);
             sw.Stop();
 
+            Output.WriteLine($"Computed hash: {actualHash}");
             Assert.True(sw.ElapsedMilliseconds < maxDurationMilliseconds, $"Fail, Call took {sw.ElapsedMilliseconds} ms");
             Output.WriteLine($"Call took {sw.ElapsedMilliseconds} ms");
              
@@ -95,6 +96,8 @@ namespace SsdeepNET.Testing
         public void TestDurationSmallFile() => 
             TestSpeed("/home/nils/Documents/me.jpg", 50);
 
+        //Important RUN with Release build (over 10 times faster)
+        //should give hash: 3145728:TFsHd/8sdd8cTSIDX3q+zjLZABYR+83m5oSOle+nyqYUEVPrzLOxAH/:TKd/8sPFPDXDzjCa+MJNyq6LNf
         [Fact]
         public void TestDurationLargeFile() => 
             TestSpeed("/home/nils/Downloads/tutorial.mp4", 5000);
